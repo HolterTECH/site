@@ -226,6 +226,25 @@ main {
   scroll-snap-type: x mandatory; /* Snap для галереи */
 }
 
+/* Контейнер для прокрутки 1111 */
+.team__scroll1 {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0.625rem 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* Snap для галереи */
+}
+
+.team__scroll1::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+.team__scroll1::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 0.25rem;
+}
+
 /* Контейнер для прокрутки */
 .team__scroll {
   display: flex;
