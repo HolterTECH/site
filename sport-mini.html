@@ -7,23 +7,31 @@
     <link rel="stylesheet" href="style.css"> <!-- Подключаем существующий CSS -->
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header__inner">
-                <a href="index.html" class="header__logo">
-                    <img src="logo.png" alt="HolterTECH"> <!-- Замените на ваш логотип -->
-                </a>
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="index.html">Главная</a></li>
-                        <li class="nav__item"><a href="products.html">Разработки</a></li>
-                        <li class="nav__item"><a href="sport-mini.html">Sport Mini</a></li>
-                        <li class="nav__item"><a href="roadmap.html">Дорожная карта</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+  <header class="header" role="banner">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html" aria-label="HolterTECH — на главную">
+        <!-- Поместите логотип Frame 4.png в ту же папку -->
+        <img src="logo.png" alt="HolterTECH логотип">
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Главное меню">
+        <ul class="nav__list" id="navList">
+          <li class="nav__item"><a href="index.html">Главная</a></li>
+          <li class="nav__item"><a href="products.html">Разработки</a></li>
+          <li class="nav__item"><a href="sport-mini.html">Sport Mini</a></li>
+          <li class="nav__item"><a href="roadmap.html">Дорожная карта</a></li>
+        </ul>
+      </nav>
+
+      <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+        <span class="burger__box">
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+          <span class="burger__bar"></span>
+        </span>
+      </button>
+    </div>
+  </header>
 
     <main>
         <section class="section hero">
@@ -71,17 +79,25 @@
         </section>
     </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__top">
-        <div>
-          <p>Контакты</p>
-          <p class="text-muted">Email: zx2orin@ya.ru
-          <p class="text-muted">Адрес: Москва, Россия</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__top">
+                    <div class="contacts">
+                        <p>Контакты</p>
+                        <p>Email: info@holtertech.ru | Тел.: +7 (999) 123-45-67</p>
+                        <p>Адрес: Москва, Россия</p>
+                    </div>
+                    <div class="social">
+                        <a href="#">VK</a>
+                        <a href="#">Telegram</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
