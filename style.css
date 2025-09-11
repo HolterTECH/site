@@ -237,7 +237,7 @@ main {
   scroll-snap-align: start; /* Снэп к левому краю */
   max-width: 250px; /* Ограничение ширины */
   width: auto; /* Ширина подстраивается под пропорции */
-  height: 200px; /* Фиксированная высота для всех фото */
+  height: 250px; /* Фиксированная высота для всех фото */
   object-fit: contain; /* Полное отображение без обрезки */
   border-radius: 0.5rem;
   align-self: center; /* Центрирование внутри слота */
@@ -481,6 +481,7 @@ input, select, textarea { font-size: 1rem; }
 .team__scroll, .team {
   -webkit-overflow-scrolling: touch;
 }
+
 
 
 
