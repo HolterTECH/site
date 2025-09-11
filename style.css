@@ -373,26 +373,19 @@ main {
 @media (max-width: 575px) {
   .team__scroll1 {
     flex-direction: row;
+    flex-wrap: nowrap; /* Добавьте здесь тоже */
     gap: 0.5rem;
     padding: 0.625rem 0.5rem;
-    overflow-y: hidden;
-    scroll-snap-type: x proximity; /* Proximity для мобильных */
+    overflow-x: auto; /* Явно */
+    scroll-snap-type: x mandatory;
   }
   
   .team__scroll1 img {
-    min-width: 150px;
+    flex-basis: 200px; /* Базовая ширина меньше, но 3*200 + gap ~650px > 320px */
+    width: 200px;
     height: 150px;
     scroll-snap-align: start;
     object-fit: cover;
-  }
-  
-  /* Margins сохраняются для центрирования */
-  .team__scroll1 img:first-child {
-    margin-left: auto;
-  }
-
-  .team__scroll1 img:last-child {
-    margin-right: auto;
   }
 }
 
@@ -400,13 +393,15 @@ main {
 @media (max-width: 400px) {
   .team__scroll1 {
     flex-direction: row;
+    flex-wrap: nowrap;
     gap: 0.375rem;
     padding: 0.5rem 0.375rem;
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
   }
   
   .team__scroll1 img {
-    min-width: 120px;
+    flex-basis: 150px; /* Компактно, но overflow: 3*150 + gap ~480px > 320px */
+    width: 150px;
     height: 120px;
   }
 }
