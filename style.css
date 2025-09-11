@@ -233,7 +233,11 @@ main {
   overflow-x: auto;
   padding: 0.625rem 0;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory; /* Snap для галереи */
+  justify-content: center;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Добавьте это для плавного скролла на iOS */
+  scroll-padding-left: 1.25rem; /* Добавьте отступ слева для лучшего "прилипания" */
+  scroll-padding-right: 1.25rem; /* И справа, чтобы последняя фото была видна */
 }
 
 .team__scroll1::-webkit-scrollbar {
