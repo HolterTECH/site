@@ -7,31 +7,30 @@
     <link rel="stylesheet" href="style.css"> <!-- Подключаем существующий CSS -->
 </head>
 <body>
-  <header class="header" role="banner">
-    <div class="container header__inner">
-      <a class="header__logo" href="index.html" aria-label="HolterTECH — на главную">
-        <!-- Поместите логотип Frame 4.png в ту же папку -->
-        <img src="logo.png" alt="HolterTECH логотип">
-      </a>
-
-      <nav class="nav" role="navigation" aria-label="Главное меню">
-        <ul class="nav__list" id="navList">
-          <li class="nav__item"><a href="index.html">Главная</a></li>
-          <li class="nav__item"><a href="products.html">Разработки</a></li>
-          <li class="nav__item"><a href="sport-mini.html">Sport Mini</a></li>
-          <li class="nav__item"><a href="roadmap.html">Дорожная карта</a></li>
-        </ul>
-      </nav>
-
-      <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
-        <span class="burger__box">
-          <span class="burger__bar"></span>
-          <span class="burger__bar"></span>
-          <span class="burger__bar"></span>
-        </span>
-      </button>
-    </div>
-  </header>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="logo.png" alt="HolterTECH"> <!-- Замените на путь к вашему логотипу -->
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html">Главная</a></li>
+                        <li class="nav__item"><a href="products.html">Разработки</a></li>
+                        <li class="nav__item"><a href="sport-mini.html">Sport Mini</a></li>
+                        <li class="nav__item"><a href="roadmap.html">Дорожная карта</a></li>
+                    </ul>
+                    <button class="burger">
+                        <div class="burger__box">
+                            <span class="burger__bar"></span>
+                            <span class="burger__bar"></span>
+                            <span class="burger__bar"></span>
+                        </div>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <main>
         <section class="section hero">
