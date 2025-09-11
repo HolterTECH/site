@@ -1,0 +1,347 @@
+/* style.css
+   Общие стили для сайта HolterTECH
+   Цвета: белый фон, чёрный текст, красный акцент
+*/
+
+/* ====== Сброс и базовые правила ====== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
+  color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  font-size: 16px;
+
+  /* === Добавлено для фиксации футера === */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====== Переменные цвета ====== */
+:root {
+  --accent: #e60000;
+  --accent-dark: #b80000;
+  --muted: #666666;
+  --border: #e6e6e6;
+  --max-width: 1200px;
+}
+
+/* ====== Ссылки и изображения ====== */
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+
+/* ====== Контейнер ====== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === Добавлено: растягивание main для прижатия футера === */
+main {
+  flex: 1;
+}
+
+/* ====== Header (шапка) ====== */
+.header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 0;
+}
+.header__logo img { height: 52px; display: block; }
+
+/* Навигация */
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.nav__item a {
+  font-weight: 600;
+  color: #000;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+.nav__item a:hover { color: var(--accent); }
+
+/* Burger (mobile) */
+.burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+.burger__box { display:flex; flex-direction:column; gap:5px; }
+.burger__bar { width:22px; height:2px; background:#000; }
+
+.news {
+  padding: 40px 0;
+  background: #fafafa; /* Серый фон, как у других секций */
+}
+.news .container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ====== Hero ====== */
+.hero {
+  padding: 48px 0;
+}
+.hero__inner {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+}
+.hero__content { flex: 1 1 480px; max-width: 640px; }
+.hero__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.hero__subtitle {
+  color: var(--muted);
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background .2s ease;
+}
+.btn:hover { background: var(--accent-dark); }
+
+/* Hero image */
+.hero__media { flex: 0 0 420px; max-width: 420px; border-radius: 10px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+
+/* ====== Sections (общая) ====== */
+.section { padding: 40px 0; }
+.section--grey { background: #fafafa; }
+
+/* Заголовки */
+.h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; text-align: center; }
+.p--center { text-align: center; color: var(--muted); max-width: 900px; margin: 0 auto 12px; }
+
+/* ====== Карточки проблем ====== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+.card {
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+.card h3 { margin-bottom: 8px; font-size: 1.05rem; }
+.card p { color: var(--muted); }
+
+/* ====== Чем мы занимаемся (развернутый блок) ====== */
+.tech {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+}
+.tech__text { flex: 1; }
+.tech__media { flex: 0 0 360px; border-radius: 10px; overflow: hidden; }
+
+/* ====== Форма обратной связи ====== */
+.form {
+  max-width: 560px;
+  margin: 20px auto 0;
+  display: grid;
+  gap: 12px;
+}
+.input, .textarea {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.textarea { min-height: 110px; resize: vertical; }
+.form__row { display:flex; gap: 12px; }
+.form__row .input { flex:1; }
+
+/* Отправка — сообщение */
+.toast {
+  display: none;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f0fff0;
+  border: 1px solid #d6efda;
+  color: #084d04;
+  text-align: center;
+}
+
+/* Центрирование галереи */
+.team__scroll1 {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  justify-content: center;
+}
+
+/* Контейнер для прокрутки */
+.team__scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.team__scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.team__scroll::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+/* ====== Команда (about.html) ====== */
+.team {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px; /* Для визуального пространства под полосой прокрутки */
+  scrollbar-width: thin; /* Для Firefox: тонкая полоса прокрутки */
+  scrollbar-color: #888 #f1f1f1; /* Цвет полосы прокрутки */
+}
+
+/* Стили для WebKit-браузеров (Chrome, Safari) */
+.team::-webkit-scrollbar {
+  height: 8px; /* Высота полосы прокрутки */
+}
+.team::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Цвет фона полосы */
+}
+.team::-webkit-scrollbar-thumb {
+  background: #888; /* Цвет ползунка */
+  border-radius: 4px;
+}
+.team::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Цвет ползунка при наведении */
+}
+
+.team__item {
+  text-align: center;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.team__photo { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;}
+
+/* ====== Разработки (products.html) ====== */
+.devices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.device {
+  border:1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+}
+.device__img { height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; }
+
+/* ====== Дорожная карта (roadmap.html) ====== */
+.timeline {
+  display: grid;
+  gap: 20px;
+  max-width: 900px;
+  margin: 18px auto 0;
+}
+.milestone {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.milestone__date {
+  min-width: 110px;
+  font-weight: 700;
+  color: var(--accent);
+}
+.milestone__content { background:#fff; border:1px solid var(--border); padding:12px; border-radius:8px; }
+
+/* ====== Footer ====== */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 28px 0;
+}
+.footer__inner {
+  display:flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer__top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; align-items:center; }
+.footer a { color: #fff; opacity:0.9; }
+.social { display:flex; gap:10px; align-items:center; }
+
+/* ====== Контакты / карта ====== */
+.map {
+  height: 360px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* ====== Utility ====== */
+.text-muted { color: var(--muted); font-size: 0.95rem; }
+
+/* ====== Адаптив ====== */
+@media (max-width: 1000px) {
+  .hero__inner { flex-direction: column-reverse; align-items: center; text-align: center; }
+  .hero__media { max-width: 80%; }
+  .cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .tech { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+  .nav__list { display:none; position:absolute; right:20px; top:64px; background:#fff; border:1px solid var(--border); padding:12px; border-radius:8px; flex-direction:column; }
+  .nav__list.nav__list--open { display:flex; }
+  .burger { display:flex; }
+  .header__inner { padding: 10px 0; }
+  .hero__title { font-size: 1.6rem; }
+  .h2 { font-size: 1.25rem; }
+  .timeline { padding: 0 8px; }
+}
