@@ -215,33 +215,33 @@ main {
   text-align: center;
 }
 
-/* Контейнер для галереи (финальный: mandatory snap, nowrap, без margins) */
+/* Контейнер для галереи (финальный: mandatory snap, nowrap, без обрезки фото) */
 .team__scroll1 {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap; /* Добавьте: предотвращает перенос, заставляет overflow */
+  flex-wrap: nowrap; /* Предотвращает перенос, обеспечивает overflow */
   gap: 1rem;
-  overflow-x: auto; /* Явно auto для скролла только при необходимости */
+  overflow-x: auto;
   overflow-y: hidden;
   padding: 0.625rem 0.625rem;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory; /* Вернули mandatory для строгого скролла и снэпа */
-  -webkit-overflow-scrolling: touch; /* Для плавных жестов на iOS */
-  scroll-padding: 0 1.25rem; /* 0 слева — первая фото у края */
+  scroll-snap-type: x mandatory; /* Сохраняем строгий снэп */
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 0 1.25rem; /* 0 слева для первой фото */
   align-items: flex-start; /* Выравнивание по верху */
 }
 
 .team__scroll1 img {
   flex-shrink: 0;
-  flex-basis: 250px; /* Добавьте: базовая ширина для стабильности (из ) */
+  flex-basis: 250px; /* Базовая ширина для скролла */
   scroll-snap-align: start; /* Снэп к левому краю */
-  height: 200px;
-  width: 250px; /* Фиксированная ширина — гарантирует overflow на мобильных */
-  object-fit: cover;
+  max-width: 250px; /* Максимум ширины, чтобы не растягивать */
+  max-height: 200px; /* Максимум высоты, чтобы помещаться */
+  width: auto; /* Адаптация к естественной ширине */
+  height: auto; /* Адаптация к естественной высоте */
+  object-fit: contain; /* Без обрезки, полное отображение с сохранением пропорций */
   border-radius: 0.5rem;
 }
-
-/* Убрали margins на first/last — они мешали скроллу */
 
 .team__scroll1::-webkit-scrollbar {
   height: 0.5rem;
@@ -373,19 +373,21 @@ main {
 @media (max-width: 575px) {
   .team__scroll1 {
     flex-direction: row;
-    flex-wrap: nowrap; /* Добавьте здесь тоже */
+    flex-wrap: nowrap;
     gap: 0.5rem;
     padding: 0.625rem 0.5rem;
-    overflow-x: auto; /* Явно */
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
   }
   
   .team__scroll1 img {
-    flex-basis: 200px; /* Базовая ширина меньше, но 3*200 + gap ~650px > 320px */
-    width: 200px;
-    height: 150px;
+    flex-basis: 200px; /* Меньше для мобильных, но достаточно для overflow */
+    max-width: 200px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
     scroll-snap-align: start;
-    object-fit: cover;
+    object-fit: contain; /* Полное отображение */
   }
 }
 
@@ -400,9 +402,13 @@ main {
   }
   
   .team__scroll1 img {
-    flex-basis: 150px; /* Компактно, но overflow: 3*150 + gap ~480px > 320px */
-    width: 150px;
-    height: 120px;
+    flex-basis: 150px; /* Компактно, overflow: 3*150 + gap ~480px > 320px */
+    max-width: 150px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    scroll-snap-align: start;
+    object-fit: contain;
   }
 }
 
@@ -475,3 +481,4 @@ input, select, textarea { font-size: 1rem; }
 .team__scroll, .team {
   -webkit-overflow-scrolling: touch;
 }
+
