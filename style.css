@@ -215,7 +215,7 @@ main {
   text-align: center;
 }
 
-//* Контейнер для галереи (исправленный: полное отображение фото без обрезки) */
+/* Контейнер для галереи (фикс: одинаковая высота всех фото) */
 .team__scroll1 {
   display: flex;
   flex-direction: row;
@@ -225,7 +225,7 @@ main {
   overflow-y: hidden;
   padding: 0.625rem 0.625rem;
   scroll-behavior: smooth;
-  scroll-snap-type: x mandatory; /* Сохраняем строгий снэп */
+  scroll-snap-type: x mandatory; /* Строгий снэп */
   -webkit-overflow-scrolling: touch;
   scroll-padding: 0 1.25rem; /* 0 слева для первой фото */
   align-items: flex-start; /* Выравнивание по верху */
@@ -235,12 +235,12 @@ main {
   flex-shrink: 0;
   flex-basis: 250px; /* Базовая ширина для скролла */
   scroll-snap-align: start; /* Снэп к левому краю */
-  max-width: 250px; /* Ограничение ширины, чтобы не растягивать */
-  width: auto; /* Адаптация к естественной ширине */
-  height: auto; /* Полная высота без обрезки */
-  object-fit: contain; /* Полное отображение без кроппинга */
+  max-width: 250px; /* Ограничение ширины */
+  width: auto; /* Ширина подстраивается под пропорции */
+  height: 200px; /* Фиксированная высота для всех фото */
+  object-fit: contain; /* Полное отображение без обрезки */
   border-radius: 0.5rem;
-  align-self: center; /* Центрирование фото внутри слота, если есть полосы */
+  align-self: center; /* Центрирование внутри слота */
 }
 
 .team__scroll1::-webkit-scrollbar {
@@ -381,10 +381,10 @@ main {
   }
   
   .team__scroll1 img {
-    flex-basis: 200px; /* Меньше для мобильных, но достаточно для overflow */
+    flex-basis: 200px; /* Меньше для мобильных */
     max-width: 200px;
     width: auto;
-    height: auto; /* Полная высота без обрезки */
+    height: 150px; /* Фиксированная высота для всех фото */
     scroll-snap-align: start;
     object-fit: contain; /* Полное отображение */
     align-self: center;
@@ -402,10 +402,10 @@ main {
   }
   
   .team__scroll1 img {
-    flex-basis: 150px; /* Компактно, overflow: 3*150 + gap ~480px > 320px */
+    flex-basis: 150px; /* Компактно */
     max-width: 150px;
     width: auto;
-    height: auto; /* Полная высота без обрезки */
+    height: 120px; /* Фиксированная высота для всех */
     scroll-snap-align: start;
     object-fit: contain;
     align-self: center;
@@ -481,5 +481,6 @@ input, select, textarea { font-size: 1rem; }
 .team__scroll, .team {
   -webkit-overflow-scrolling: touch;
 }
+
 
 
