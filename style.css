@@ -215,7 +215,7 @@ main {
   text-align: center;
 }
 
-/* Контейнер для галереи (финальный: mandatory snap, nowrap, без обрезки фото) */
+//* Контейнер для галереи (исправленный: полное отображение фото без обрезки) */
 .team__scroll1 {
   display: flex;
   flex-direction: row;
@@ -235,12 +235,12 @@ main {
   flex-shrink: 0;
   flex-basis: 250px; /* Базовая ширина для скролла */
   scroll-snap-align: start; /* Снэп к левому краю */
-  max-width: 250px; /* Максимум ширины, чтобы не растягивать */
-  max-height: 200px; /* Максимум высоты, чтобы помещаться */
+  max-width: 250px; /* Ограничение ширины, чтобы не растягивать */
   width: auto; /* Адаптация к естественной ширине */
-  height: auto; /* Адаптация к естественной высоте */
-  object-fit: contain; /* Без обрезки, полное отображение с сохранением пропорций */
+  height: auto; /* Полная высота без обрезки */
+  object-fit: contain; /* Полное отображение без кроппинга */
   border-radius: 0.5rem;
+  align-self: center; /* Центрирование фото внутри слота, если есть полосы */
 }
 
 .team__scroll1::-webkit-scrollbar {
@@ -383,11 +383,11 @@ main {
   .team__scroll1 img {
     flex-basis: 200px; /* Меньше для мобильных, но достаточно для overflow */
     max-width: 200px;
-    max-height: 150px;
     width: auto;
-    height: auto;
+    height: auto; /* Полная высота без обрезки */
     scroll-snap-align: start;
     object-fit: contain; /* Полное отображение */
+    align-self: center;
   }
 }
 
@@ -404,11 +404,11 @@ main {
   .team__scroll1 img {
     flex-basis: 150px; /* Компактно, overflow: 3*150 + gap ~480px > 320px */
     max-width: 150px;
-    max-height: 120px;
     width: auto;
-    height: auto;
+    height: auto; /* Полная высота без обрезки */
     scroll-snap-align: start;
     object-fit: contain;
+    align-self: center;
   }
 }
 
@@ -481,4 +481,5 @@ input, select, textarea { font-size: 1rem; }
 .team__scroll, .team {
   -webkit-overflow-scrolling: touch;
 }
+
 
