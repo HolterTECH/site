@@ -249,6 +249,34 @@ main {
   border-radius: 0.25rem;
 }
 
+@media (max-width: 400px) {
+  .team__scroll1 {
+    flex-direction: column; /* Вертикальный стек вместо горизонтального */
+    overflow-x: hidden; /* Уберите горизонтальный скролл */
+    overflow-y: auto;
+    max-height: 300px; /* Ограничьте высоту, если нужно */
+    align-items: center;
+  }
+  
+  .team__scroll1 img {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 575px) {
+  .team__scroll1 {
+    gap: 0.75rem; /* Уменьшите с 1.25rem до 0.75rem для экономии места */
+  }
+  
+  /* Убедитесь, что изображения не слишком широкие */
+  .team__scroll1 img {
+    flex-shrink: 0; /* Уже есть, но добавьте min-width для контроля */
+    min-width: 200px; /* Минимальная ширина фото, чтобы не сжимались слишком */
+    height: auto; /* Автоматическая высота */
+  }
+}
+
 /* Контейнер для прокрутки */
 .team__scroll {
   display: flex;
