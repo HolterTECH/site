@@ -518,5 +518,28 @@ input, select, textarea { font-size: 1rem; }
   font-size: 1.1rem;
 }
 
+/* Адаптив для блока Ключевые особенности */
+@media (max-width: 575px) {
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .feature {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.75rem;
+  }
+
+  .feature__icon {
+    font-size: 1.3rem;
+  }
+
+  .feature p {
+    font-size: 0.9rem;
+  }
+}
+
 
 
