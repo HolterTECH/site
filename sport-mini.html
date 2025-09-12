@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Mini - HolterTECH</title>
+    <link rel="stylesheet" href="style.css"> <!-- Подключаем существующий CSS -->
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div class="header__logo">
+                    <img src="logo.png" alt="HolterTECH"> <!-- Замените на путь к вашему логотипу -->
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html">Главная</a></li>
+                        <li class="nav__item"><a href="products.html">Разработки</a></li>
+                        <li class="nav__item"><a href="sport-mini.html">Sport Mini</a></li>
+                        <li class="nav__item"><a href="roadmap.html">Дорожная карта</a></li>
+                    </ul>
+                    <button class="burger">
+                        <div class="burger__box">
+                            <span class="burger__bar"></span>
+                            <span class="burger__bar"></span>
+                            <span class="burger__bar"></span>
+                        </div>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section hero">
+            <div class="container">
+                <div class="hero__inner">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Sport Mini</h1>
+                        <p class="hero__subtitle">Компактный кардиосенсор для спортсменов и активных людей. Непрерывный мониторинг ЭКГ во время тренировок и повседневной активности.</p>
+                        <p class="features__title">Ключевые особенности:</p>
+                        <div class="features">
+                        <div class="feature">
+                            <span class="feature__icon">❤️</span>
+                            <p>Автоматическое сохранение ЭКГ при нарушениях сердечного ритма</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">📲</span>
+                            <p>Принудительная запись ЭКГ по требованию пользователя</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">🔔</span>
+                            <p>Оповещение о нарушениях сердечного ритма</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">📊</span>
+                            <p>Анализ ритма сердца в реальном времени</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">🏋️</span>
+                            <p>Отслеживание прогресса тренировок</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">🔋</span>
+                            <p>До 7 дней бесперебойной работы</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature__icon">💧</span>
+                            <p>Водонепроницаемый корпус</p>
+                        </div>
+                        </div>
+
+                        <a href="index.html" class="btn">Вернуться на главную</a>
+                    </div>
+                    <div class="hero__media">
+                        <img src="blk.jpg" alt="Sport Mini">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="h2">Галерея Sport Mini</h2>
+                <p class="p--center">Ознакомьтесь с устройством со всех сторон</p>
+                <div class="team__scroll1">
+                    <div class="team__item">
+                        <img src="alpha.png" alt="Sport Mini вид 1" class="team__photo">
+                    </div>
+                    <div class="team__item">
+                        <img src="render_side.png" alt="Sport Mini вид 2" class="team__photo">
+                    </div>
+                    <div class="team__item">
+                        <img src="render1.png" alt="Sport Mini вид 3" class="team__photo">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+        <div class="footer__top">
+            <div>
+            <p>Контакты</p>
+            <p class="text-muted">Email: zx2orin@ya.ru
+            <p class="text-muted">Адрес: Москва, Россия</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const gallery = document.querySelector('.team__scroll1');
+        if (gallery) {
+          gallery.scrollLeft = 0; // Начало с первой фото
+        }
+      });
+    </script>
+</body>
+
+</html>
