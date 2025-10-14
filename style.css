@@ -1,0 +1,1929 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Шапка */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Логотип */
+.logo img {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* Навигация */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.nav-list a:hover {
+    color: #ccc;
+}
+
+/* Футер */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0 5px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-contacts h3 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 22px;
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-list strong {
+    min-width: 80px;
+    margin-right: 10px;
+}
+
+.contact-list a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: #ccc;
+    text-decoration: underline;
+}
+
+.footer-info {
+    text-align: right;
+    opacity: 0.8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-list {
+        gap: 20px;
+    }
+    
+    body {
+        padding-top: 120px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-info {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .contact-list li {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Блок Герой */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Фон с размытием */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+    transform: scale(1.1); /* Убирает темные края от размытия */
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Затемнение для лучшей читаемости текста */
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+}
+
+/* Текстовая часть */
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+    color: white;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 500px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Квадратное фото устройства */
+.hero-device {
+    flex-shrink: 0;
+    width: 450px;
+    height: 450px;
+    position: relative;
+}
+
+.hero-device img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-device {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: auto;
+        padding: 100px 0;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-device {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-device {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Блок с миссией */
+.mission {
+    background-color: #f8f9fa; /* Серый фон */
+    padding: 100px 0;
+    position: relative;
+}
+
+.mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.mission-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.mission-description {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #333;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Блок команды */
+.team {
+    background-color: #fff; /* Белый фон */
+    padding: 100px 0;
+    position: relative;
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.team-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.team-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.team-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.team-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.team-scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.team-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.team-cards {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+    min-width: min-content;
+}
+
+.team-card {
+    flex: 0 0 auto;
+    width: 280px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-photo img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.team-position {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Адаптивность для блоков миссии и команды */
+@media (max-width: 768px) {
+    .mission {
+        padding: 70px 0;
+    }
+    
+    .mission-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+    
+    .mission-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+    
+    .team {
+        padding: 70px 0;
+    }
+    
+    .team-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    .team-card {
+        width: 250px;
+    }
+    
+    .team-photo {
+        height: 250px;
+    }
+    
+    .team-cards {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mission {
+        padding: 50px 0;
+    }
+    
+    .mission-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .mission-description {
+        font-size: 1rem;
+    }
+    
+    .team {
+        padding: 50px 0;
+    }
+    
+    .team-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .team-card {
+        width: 220px;
+    }
+    
+    .team-photo {
+        height: 220px;
+    }
+    
+    .team-info {
+        padding: 20px 15px;
+    }
+    
+    .team-name {
+        font-size: 1.2rem;
+    }
+    
+    .team-position {
+        font-size: 0.9rem;
+    }
+}
+
+/* Блок команды */
+.team-section {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.team-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.team-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px 0;
+}
+
+.team-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.team-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.team-scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.team-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.team-cards {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+    min-width: min-content;
+}
+
+.team-card {
+    flex: 0 0 auto;
+    width: 280px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-photo img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding: 25px 20px;
+    text-align: center;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.team-position {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Адаптивность для блока команды */
+@media (max-width: 768px) {
+    .team-section {
+        margin-top: 70px;
+    }
+    
+    .team-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    .team-card {
+        width: 250px;
+    }
+    
+    .team-photo {
+        height: 250px;
+    }
+    
+    .team-cards {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-section {
+        margin-top: 50px;
+    }
+    
+    .team-title {
+        font-size: 1.7rem;
+    }
+    
+    .team-card {
+        width: 220px;
+    }
+    
+    .team-photo {
+        height: 220px;
+    }
+    
+    .team-info {
+        padding: 20px 15px;
+    }
+    
+    .team-name {
+        font-size: 1.2rem;
+    }
+    
+    .team-position {
+        font-size: 0.9rem;
+    }
+}
+
+/* Блок проблем */
+.problems {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+}
+
+.problems-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.problems-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.problem-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.problem-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.problem-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #000, #333);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.problem-icon span {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.problem-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.problem-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    font-weight: 400;
+}
+
+/* Адаптивность для блока проблем */
+@media (max-width: 768px) {
+    .problems {
+        padding: 70px 0;
+    }
+    
+    .problems-title {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    .problems-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .problem-card {
+        padding: 30px 25px;
+    }
+    
+    .problem-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+    
+    .problem-icon span {
+        font-size: 1.7rem;
+    }
+    
+    .problem-title {
+        font-size: 1.3rem;
+    }
+    
+    .problem-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .problems {
+        padding: 50px 0;
+    }
+    
+    .problems-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    
+    .problem-card {
+        padding: 25px 20px;
+    }
+    
+    .problem-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+    
+    .problem-icon span {
+        font-size: 1.5rem;
+    }
+    
+    .problem-title {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Страница продуктов */
+.products-header {
+    background-color: #f8f9fa;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.products-header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.products-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.products-subtitle {
+    font-size: 1.3rem;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.products {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+.products-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Карточка продукта */
+.product-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-content {
+    padding: 30px;
+    position: relative;
+}
+
+.product-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.product-card:hover .product-name {
+    color: #333;
+}
+
+.product-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.product-card:hover .product-description {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.product-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-description ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-description li {
+    padding: 8px 0;
+    font-size: 1rem;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+}
+
+.product-description li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Активная ссылка в навигации */
+.nav-list a.active {
+    color: #ccc;
+    position: relative;
+}
+
+.nav-list a.active:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ccc;
+}
+
+/* Адаптивность для страницы продуктов */
+@media (max-width: 768px) {
+    .products-header {
+        padding: 100px 0 60px;
+    }
+    
+    .products-title {
+        font-size: 2.5rem;
+    }
+    
+    .products-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .products {
+        padding: 60px 0;
+    }
+    
+    .products-container {
+        gap: 30px;
+    }
+    
+    .product-image {
+        height: 250px;
+    }
+    
+    .product-content {
+        padding: 25px;
+    }
+    
+    .product-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-header {
+        padding: 80px 0 40px;
+    }
+    
+    .products-title {
+        font-size: 2rem;
+    }
+    
+    .products-subtitle {
+        font-size: 1rem;
+    }
+    
+    .products {
+        padding: 40px 0;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .product-content {
+        padding: 20px;
+    }
+    
+    .product-name {
+        font-size: 1.3rem;
+    }
+    
+    .product-description p {
+        font-size: 1rem;
+    }
+    
+    .product-description li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Галерея продукта - 3 видимых изображения */
+.product-gallery {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    height: 100%;
+    position: relative;
+}
+
+.image-container {
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    cursor: pointer;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Левое изображение */
+.image-container.left {
+    width: 200px;
+    height: 200px;
+    opacity: 0.7;
+    transform: translateX(-150px) scale(0.9);
+    z-index: 1;
+}
+
+/* Центральное изображение (активное) */
+.image-container.center {
+    width: 280px;
+    height: 280px;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    z-index: 3;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    cursor: default;
+}
+
+/* Правое изображение */
+.image-container.right {
+    width: 200px;
+    height: 200px;
+    opacity: 0.7;
+    transform: translateX(150px) scale(0.9);
+    z-index: 1;
+}
+
+/* Элементы управления галереей */
+.gallery-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+/* Кнопки навигации */
+.gallery-prev,
+.gallery-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.gallery-prev:hover,
+.gallery-next:hover {
+    background: #000;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Индикаторы-кружочки */
+.gallery-dots {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: #000;
+    border-color: #000;
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: #000;
+    transform: scale(1.1);
+}
+
+/* Адаптивность для галереи */
+@media (max-width: 968px) {
+    .product-gallery {
+        height: 350px;
+    }
+    
+    .image-container.left,
+    .image-container.right {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .image-container.center {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .image-container.left {
+        transform: translateX(-100px) scale(0.9);
+    }
+    
+    .image-container.right {
+        transform: translateX(100px) scale(0.9);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-gallery {
+        height: 300px;
+    }
+    
+    .image-container.left,
+    .image-container.right {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .image-container.center {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .image-container.left {
+        transform: translateX(-80px) scale(0.9);
+    }
+    
+    .image-container.right {
+        transform: translateX(80px) scale(0.9);
+    }
+    
+    .gallery-controls {
+        gap: 15px;
+    }
+    
+    .gallery-prev,
+    .gallery-next {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-gallery {
+        height: 250px;
+    }
+    
+    .image-container.left,
+    .image-container.right {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .image-container.center {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .image-container.left {
+        transform: translateX(-60px) scale(0.9);
+    }
+    
+    .image-container.right {
+        transform: translateX(60px) scale(0.9);
+    }
+    
+    .gallery-controls {
+        gap: 10px;
+        bottom: 15px;
+    }
+    
+    .gallery-prev,
+    .gallery-next {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    
+    .gallery-dots {
+        gap: 8px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Обновленные стили для карточек продуктов */
+.product-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Галерея теперь вверху */
+.product-gallery {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Контент продукта - название и описание */
+.product-content {
+    padding: 25px 30px;
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.product-card:hover .product-name {
+    color: #333;
+}
+
+/* Описание продукта - скрыто по умолчанию */
+.product-description {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.product-card:hover .product-description {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 15px;
+}
+
+.product-description p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product-description ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-description li {
+    padding: 8px 0;
+    font-size: 1rem;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+    text-align: left;
+}
+
+.product-description li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Адаптивность для обновленных карточек */
+@media (max-width: 768px) {
+    .product-gallery {
+        height: 300px;
+    }
+    
+    .product-content {
+        padding: 20px 25px;
+    }
+    
+    .product-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-gallery {
+        height: 250px;
+    }
+    
+    .product-content {
+        padding: 15px 20px;
+    }
+    
+    .product-name {
+        font-size: 1.3rem;
+    }
+    
+    .product-description p {
+        font-size: 1rem;
+    }
+    
+    .product-description li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Стили для страницы дорожной карты */
+.roadmap-description {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.roadmap-description p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.roadmap-description ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.roadmap-description li {
+    padding: 4px 0;
+    font-size: 0.8rem;
+    color: #555;
+    position: relative;
+    padding-left: 15px;
+}
+
+.roadmap-description li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Широкие карточки для дорожной карты */
+.roadmap-cards {
+    display: flex;
+    gap: 30px;
+    padding: 0 20px;
+    min-width: min-content;
+}
+
+.roadmap-card {
+    flex: 0 0 auto;
+    width: 380px; /* Шире чем обычные карточки команды */
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.roadmap-photo {
+    width: 100%;
+    height: 380px; /* Немного выше для лучшего отображения контента */
+    overflow: hidden;
+}
+
+.roadmap-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.roadmap-card:hover .roadmap-photo img {
+    transform: scale(1.05);
+}
+
+.roadmap-info {
+    padding: 25px;
+    text-align: center;
+    min-height: 280px; /* Фиксированная высота для единообразия */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.roadmap-name {
+    font-size: 1.5rem; /* Крупнее чем в команде */
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.roadmap-position {
+    font-size: 1.1rem; /* Крупнее */
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Адаптивность для дорожной карты */
+@media (max-width: 968px) {
+    .roadmap-card {
+        width: 340px;
+    }
+    
+    .roadmap-info {
+        padding: 20px;
+        min-height: 260px;
+    }
+    
+    .roadmap-name {
+        font-size: 1.3rem;
+    }
+    
+    .roadmap-position {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .roadmap-card {
+        width: 300px;
+    }
+    
+    .roadmap-photo {
+        height: 200px;
+    }
+    
+    .roadmap-info {
+        padding: 18px;
+        min-height: 240px;
+    }
+    
+    .roadmap-name {
+        font-size: 1.2rem;
+    }
+    
+    .roadmap-description p {
+        font-size: 0.85rem;
+    }
+    
+    .roadmap-description li {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .roadmap-card {
+        width: 280px;
+    }
+    
+    .roadmap-photo {
+        height: 180px;
+    }
+    
+    .roadmap-info {
+        padding: 15px;
+        min-height: 220px;
+    }
+    
+    .roadmap-name {
+        font-size: 1.1rem;
+    }
+    
+    .roadmap-position {
+        font-size: 0.9rem;
+    }
+    
+    .roadmap-description p {
+        font-size: 0.8rem;
+    }
+    
+    .roadmap-description li {
+        font-size: 0.7rem;
+        padding: 3px 0;
+    }
+}
+
+/* Стили для выделения текущего этапа */
+.roadmap-card.current {
+    position: relative;
+    border: 3px solid #000;
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-card.current::before {
+    content: 'ТЕКУЩИЙ ЭТАП';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.roadmap-card.completed {
+    position: relative;
+    opacity: 0.9;
+}
+
+.roadmap-card.completed::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.03);
+    z-index: 1;
+}
+
+.roadmap-card.completed .roadmap-photo img {
+    filter: grayscale(0.3);
+}
+
+/* Индикатор прогресса */
+.roadmap-progress {
+    width: 100%;
+    height: 4px;
+    background: #f0f0f0;
+    border-radius: 2px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.roadmap-progress-bar {
+    height: 100%;
+    background: #000;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Статус этапа */
+.roadmap-status {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+.status-completed {
+    background: #4CAF50;
+    color: white;
+}
+
+.status-current {
+    background: #2196F3;
+    color: white;
+}
+
+.status-upcoming {
+    background: #FF9800;
+    color: white;
+}
+
+/* Адаптивность для статусов этапов */
+@media (max-width: 768px) {
+    .roadmap-card.current::before {
+        font-size: 0.6rem;
+        padding: 4px 8px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .roadmap-status {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+    }
+    
+    .roadmap-progress {
+        height: 3px;
+        margin: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .roadmap-card.current::before {
+        font-size: 0.55rem;
+        padding: 3px 6px;
+        top: 8px;
+        right: 8px;
+    }
+    
+    .roadmap-status {
+        font-size: 0.6rem;
+        padding: 1px 5px;
+    }
+}
+
+/* Стили для блока с письмами */
+.letters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    width: 100%;
+}
+
+.letter-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.letter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.letter-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.letter-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: zoom-in;
+}
+
+.letter-card:hover .letter-image img {
+    transform: scale(1.05);
+}
+
+.letter-info {
+    padding: 25px;
+}
+
+.letter-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.letter-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.letter-meta {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.status-badge {
+    display: inline-block;
+    background: #4CAF50;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+/* Модальное окно для просмотра писем */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Адаптивность для писем */
+@media (max-width: 968px) {
+    .letters-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .letter-image {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .letter-info {
+        padding: 20px;
+    }
+    
+    .letter-title {
+        font-size: 1.2rem;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 70vh;
+    }
+    
+    .close {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .letters-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .letter-image {
+        height: 200px;
+    }
+    
+    .letter-info {
+        padding: 15px;
+    }
+    
+    .modal {
+        padding-top: 30px;
+    }
+}
+
+/* Дизменение растояние над письмами */
+.letters-section .mission-content {
+    padding-bottom: 20px;
+}
+
+.letters-section .mission-title {
+    margin-bottom: 15px;
+}
+
+.letters-section .mission-description {
+    margin-bottom: 0px;
+}
