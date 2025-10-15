@@ -1926,4 +1926,71 @@ main {
 
 .letters-section .mission-description {
     margin-bottom: 0px;
+
+}
+
+/* Исправление для точек в roadmap на мобильных устройствах */
+.roadmap-description ul {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.roadmap-description li {
+    padding: 6px 0;
+    font-size: 0.8rem;
+    color: #555;
+    position: relative;
+    padding-left: 20px; /* Увеличиваем отступ для точек */
+    text-align: left;
+    line-height: 1.4;
+}
+
+.roadmap-description li:before {
+    content: "•";
+    position: absolute;
+    left: 8px; /* Сдвигаем точки левее */
+    color: #000;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Увеличиваем отступы для мобильных устройств */
+@media (max-width: 768px) {
+    .roadmap-description li {
+        padding-left: 22px; /* Еще больше отступ для мобильных */
+        font-size: 0.75rem;
+        padding: 5px 0;
+    }
+    
+    .roadmap-description li:before {
+        left: 6px;
+        font-size: 1.1rem;
+    }
+    
+    .roadmap-info {
+        padding: 20px 18px; /* Увеличиваем внутренние отступы карточки */
+    }
+}
+
+@media (max-width: 480px) {
+    .roadmap-description li {
+        padding-left: 24px; /* Максимальный отступ для маленьких экранов */
+        font-size: 0.7rem;
+        padding: 4px 0;
+    }
+    
+    .roadmap-description li:before {
+        left: 4px;
+        font-size: 1rem;
+    }
+    
+    .roadmap-info {
+        padding: 15px 15px;
+    }
+    
+    /* Уменьшаем шрифт для длинных списков */
+    .roadmap-card .roadmap-description ul {
+        max-height: 200px;
+        overflow-y: auto;
+    }
 }
