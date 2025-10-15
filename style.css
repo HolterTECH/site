@@ -1994,3 +1994,123 @@ main {
         overflow-y: auto;
     }
 }
+
+/* Адаптивность для дорожной карты */
+@media (max-width: 768px) {
+    .team-scroll-container {
+        overflow-x: visible;
+        padding-bottom: 0;
+    }
+    
+    .roadmap-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .roadmap-card {
+        width: 100% !important;
+        flex: 0 0 auto;
+        min-width: auto;
+        margin-right: 0;
+    }
+    
+    .roadmap-photo {
+        height: 200px;
+    }
+    
+    .roadmap-info {
+        padding: 20px;
+    }
+    
+    .roadmap-name {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    /* Убираем горизонтальный скролл на мобильных */
+    .team-scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Улучшенная адаптивность для дорожной карты */
+@media (max-width: 768px) {
+    .team {
+        padding: 40px 0;
+    }
+    
+    .team-scroll-container {
+        overflow-x: visible;
+        padding-bottom: 0;
+        margin: 0 -15px;
+    }
+    
+    .roadmap-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .roadmap-card {
+        width: 100% !important;
+        flex: 0 0 auto;
+        min-width: auto;
+        margin-right: 0;
+        border-left: 4px solid #4CAF50;
+    }
+    
+    .roadmap-card.current {
+        border-left-color: #2196F3;
+    }
+    
+    .roadmap-card:not(.completed):not(.current) {
+        border-left-color: #FF9800;
+    }
+    
+    .roadmap-photo {
+        height: 180px;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .roadmap-info {
+        padding: 20px;
+    }
+    
+    .roadmap-name {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .roadmap-status {
+        align-self: flex-start;
+    }
+    
+    /* Скрываем горизонтальный скролл */
+    .team-scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .team-scroll-container {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .roadmap-photo {
+        height: 160px;
+    }
+    
+    .roadmap-info {
+        padding: 15px;
+    }
+    
+    .roadmap-name {
+        font-size: 1.2rem;
+    }
+}
